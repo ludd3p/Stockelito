@@ -5,7 +5,7 @@ const MiddlePartCard = (newsItem: NewsItem) => {
     <div className="flex justify-center items-center w-full h-full">
       <div className="flex flex-col group relative text-white rounded-xl 
         px-6 py-8 h-80 w-80 lg:h-90 lg:w-45 overflow-hidden cursor-pointer ">
-        <div className="absolute inset-0 bg-cover bg-center"/> // Potentiell bakgrund
+        <div className="absolute inset-0 bg-cover bg-center"/> 
         <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
         <div className="relative flex flex-col gap-3">
 

@@ -3,6 +3,7 @@ import MiddlePartCard from './MiddlePartCard';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/sea-green';
 import { getNewsPosts } from '../../../../sanity/sanity-utils';
+import { NewsItem } from '../../../../Types/SanityTypes';
 
 const MiddlePartCardSlider = () => {
   const [news, setNews] = useState([]);
@@ -25,10 +26,10 @@ const MiddlePartCardSlider = () => {
       autoWidth: false,
       autoHeight: false
     }}>
-      {news.map((newsPost) => (
-        <SplideSlide key={newsPost._id}>
+      {news.map((newsItem: NewsItem) => (
+        <SplideSlide key={ newsItem._id}>
           <div className="flex justify-center items-center w-full h-full">
-            <MiddlePartCard props={newsPost} />
+            <MiddlePartCard {...newsItem} />
           </div>
         </SplideSlide>
       ))}

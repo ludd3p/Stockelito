@@ -1,4 +1,6 @@
-const TopPartItem = () => {
+import { Business } from "../../../../Types/SanityTypes";
+
+const TopPartItem = (business: Business) => {
     return (
       <a
         href="https://github.com/spgarn"
@@ -7,7 +9,7 @@ const TopPartItem = () => {
         rel="noopener noreferrer"
       >
         <h2 className={`mb-3 text-2xl font-semibold`}>
-          SPGAB{' '}
+          {business.businessName}{' '}
           <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
             -&gt;
           </span>

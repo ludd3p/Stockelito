@@ -4,3 +4,10 @@ export type NewsItem = {
     newsTitle: string;
     newsText: string;
 }
+
+export type Business = {
+    _id: string;
+    _createdAt: Date;
+    businessName: string;
+    businessText: string;
+}

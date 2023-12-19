@@ -19,6 +19,7 @@ export async function getBusiness () {
             _id,
             _createdAt,
             updatedAt,
+            businessTicker,
             businessName,
             businessText,
         }`

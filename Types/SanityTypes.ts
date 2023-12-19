@@ -8,6 +8,7 @@ export type NewsItem = {
 export type Business = {
     _id: string;
     _createdAt: Date;
+    businessTicker: string;
     businessName: string;
     businessText: string;
 }

@@ -6,6 +6,12 @@ const business = {
   type: "document",
   fields: [
     defineField({
+      name: "businessTicker",
+      type: "string",
+      title: "Business ticker",
+      description: "Enter the stock ticker of the company"
+    }),
+    defineField({
         name: "businessName",
         type: "string",
         title: "Business name",

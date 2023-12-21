@@ -24,7 +24,15 @@ const MiddlePartCardSlider = () => {
       perMove: 1,
       gap: '1rem',
       autoWidth: false,
-      autoHeight: false
+      autoHeight: false,
+      breakpoints: {
+        900: {
+          perPage: 2,
+        },
+        600: {
+          perPage: 1,
+        }
+      }
     }}>
       {news.map((newsItem: NewsItem) => (
         <SplideSlide key={ newsItem._id}>

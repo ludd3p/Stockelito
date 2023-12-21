@@ -1,6 +1,6 @@
 import { NewsItem } from "../../../../Types/SanityTypes";
 
-const MiddlePartCard = (newsItem: NewsItem) => {
+const NewsCard = (newsItem: NewsItem) => {
   return (
     <div className="flex justify-center items-center w-full h-full">
       <div className="flex flex-col group relative text-white rounded-xl 
@@ -16,4 +16,4 @@ const MiddlePartCard = (newsItem: NewsItem) => {
     </div>
   );
 }
-export default MiddlePartCard;
+export default NewsCard;

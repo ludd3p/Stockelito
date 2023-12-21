@@ -22,7 +22,7 @@ export async function getBusiness () {
             businessTicker,
             businessName,
             businessText,
-        }`
+        }[0...14]`
     )
 }
 

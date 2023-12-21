@@ -20,17 +20,17 @@ const TopPart = () => {
 
     return (
         <div className="w-full items-center">
-            <div className="grid text-center lg:w-full  lg:grid-cols-5 place-items-center">
+            <div className="grid text-center w-full  grid-cols-5 place-items-center">
                 {itemsForRow1.map((business: Business) => (
                     <TopPartItem key={business._id} {...business} />
                 ))}
             </div>
-            <div className="grid text-center lg:w-full  lg:grid-cols-4 place-items-center px-[10%]">
+            <div className="grid text-center w-full  grid-cols-4 place-items-center px-[10%]">
                 {itemsForRow2.map((business: Business) => (
                     <TopPartItem key={business._id} {...business} />
                 ))}
             </div>
-            <div className="grid text-center lg:w-full lg:grid-cols-5 place-items-center">
+            <div className="grid text-center w-full grid-cols-5 place-items-center">
                 {itemsForRow3.map((business: Business) => (
                     <TopPartItem key={business._id} {...business} />
                 ))}

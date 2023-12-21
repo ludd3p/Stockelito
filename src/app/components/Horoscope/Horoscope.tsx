@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import BottomPartHoroscope from "./BottomPartHoroscope";
 import { getHoroscope } from "../../../../sanity/sanity-utils";
 import { Horoscope } from "../../../../Types/SanityTypes";
+import HoroscopeCard from "./HoroscopeCard";
 
-const BottomPart = () => {
+const Horoscope = () => {
 
     const [horoscope, setHoroscope] = useState<Horoscope>();
 
@@ -19,12 +19,12 @@ const BottomPart = () => {
   
 
     return (
-        <div className="flex flex-col w-full items-center">
+        <div className="flex flex-col w-full items-center mt-10">
             <div>Veckans horoskop</div>
-            {horoscope && <BottomPartHoroscope {...horoscope} />}
+            {horoscope && <HoroscopeCard {...horoscope} />}
         </div>
 
     )
 }
 
-export default BottomPart;
+export default Horoscope;

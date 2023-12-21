@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import MiddlePartCard from './MiddlePartCard';
+import NewsCard from './NewsCard';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/sea-green';
 import { getNewsPosts } from '../../../../sanity/sanity-utils';
 import { NewsItem } from '../../../../Types/SanityTypes';
 
-const MiddlePartCardSlider = () => {
+const NewsSlider = () => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const MiddlePartCardSlider = () => {
       {news.map((newsItem: NewsItem) => (
         <SplideSlide key={ newsItem._id}>
           <div className="flex justify-center items-center w-full h-full">
-            <MiddlePartCard {...newsItem} />
+            <NewsCard {...newsItem} />
           </div>
         </SplideSlide>
       ))}
@@ -45,4 +45,4 @@ const MiddlePartCardSlider = () => {
   );
 };
 
-export default MiddlePartCardSlider;
+export default NewsSlider;

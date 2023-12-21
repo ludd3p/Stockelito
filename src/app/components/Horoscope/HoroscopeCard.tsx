@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Horoscope } from "../../../../Types/SanityTypes";
 
-const BottomPartHoroscope = (horoscope: Horoscope) => {
+const HoroscopeCard = (horoscope: Horoscope) => {
     return (
         <div className="flex flex-row justify-center items-center  bg-zinc-300 text-black rounded-xl 
-                        h-40 w-4/5 lg:w-2/5 overflow-hidden px-3 py-3 ">
+                        h-40 w-5/6 md:w-3/4 lg:w-1/2 overflow-hidden px-3 py-3 gap-2">
             <div className="flex flex-col justify-center items-center w-1/4 h-full">
                 <Image
                     src={horoscope.image}
@@ -15,10 +15,10 @@ const BottomPartHoroscope = (horoscope: Horoscope) => {
             </div>
             <div className="flex flex-col relative w-3/4 h-full items-center">
                 <h1 className="text-xl lg:text-2xl">{horoscope.title}</h1>
-                <p className="lg:text-[18px]">{horoscope.text}</p>
+                <p className="lg:text-[18px] text-center">{horoscope.text}</p>
             </div>
         </div>
 
     )
 }
-export default BottomPartHoroscope;
+export default HoroscopeCard;

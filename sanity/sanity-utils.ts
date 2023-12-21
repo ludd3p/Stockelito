@@ -25,3 +25,14 @@ export async function getBusiness () {
         }`
     )
 }
+
+export async function getHoroscope() {
+    return client.fetch(
+        groq`*[_type == 'horoscope' ]| order(_updatedAt desc){
+            _id,
+            title,
+            text,
+            "image": image.asset->url,
+        }[0]`
+    )
+}

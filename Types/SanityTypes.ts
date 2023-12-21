@@ -12,3 +12,10 @@ export type Business = {
     businessName: string;
     businessText: string;
 }
+
+export type Horoscope = {
+    _id: string;
+    title: string;
+    text: string;
+    image: string;
+}

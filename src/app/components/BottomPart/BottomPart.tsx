@@ -11,7 +11,6 @@ const BottomPart = () => {
       const fetchHoroscope = async () => {
         const horoscopeData = await getHoroscope();
         setHoroscope(horoscopeData);
-        console.log(horoscopeData)
       };
   
       fetchHoroscope();

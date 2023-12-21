@@ -32,7 +32,7 @@ export async function getHoroscope() {
             _id,
             title,
             text,
-            image,
+            "image": image.asset->url,
         }[0]`
     )
 }

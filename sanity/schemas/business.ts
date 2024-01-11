@@ -28,13 +28,13 @@ const business = {
         type: "image",
         title: "Company logo",
       }),
-      ({
+      defineField({
         name: 'slug',
         title: 'Slug',
         type: 'slug',
         options: {source: 'businessName'}
       }),
-      ({
+      defineField({
         name: 'content',
         title: 'Content',
         type: 'array',

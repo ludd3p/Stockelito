@@ -21,6 +21,18 @@ const news = {
         name: "newsImage",
         type: "image",
         title: "News image",
+      }),
+      defineField({
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options: {source: 'newsTitle'}
+      }),
+      defineField({
+        name: 'content',
+        title: 'Content',
+        type: 'array',
+        of: [{ type: "block"}]
       })
   ],
 };

@@ -9,7 +9,23 @@ export async function getNewsPosts () {
             _updatedAt,
             newsTitle,
             newsText,
+            "slug": slug.current,
+            content
         }`
+    )
+}
+
+export async function getNewsPost (slug: string) {
+    return client.fetch(
+        groq`*[_type == 'news'&& slug.current == '${slug}']{
+            _id,
+            _createdAt,
+            _updatedAt,
+            newsTitle,
+            newsText,
+            "slug": slug.current,
+            content
+        }[0]`
     )
 }
 

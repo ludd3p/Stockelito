@@ -1,14 +1,11 @@
-import { Business } from "../../../../Types/SanityTypes";
+import Link from 'next/link';
+import { Business } from '../../../../Types/SanityTypes';
 
 const TopPartItem = (business: Business) => {
   return (
-    <a
-      href="https://github.com/spgarn"
-      className="group rounded-full overflow-hidden border h-28 w-28 p-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 py-7"
-      target="_blank"
-      rel="noopener noreferrer"
-      title={business.businessName}
-    >
+    <Link href={`/business/${business.slug}`}
+      key={business._id}
+      className="group rounded-full overflow-hidden border h-28 w-28 p-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 py-7">
       <div className="text-center">
         <h2 className={`mb-1 text-2xl font-semibold`}>
           {business.businessTicker}
@@ -17,7 +14,7 @@ const TopPartItem = (business: Business) => {
           -&gt;
         </span>
       </div>
-    </a>
+    </Link>
   );
 };
 

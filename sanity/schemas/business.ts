@@ -27,6 +27,18 @@ const business = {
         name: "businessLogo",
         type: "image",
         title: "Company logo",
+      }),
+      ({
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options: {source: 'businessName'}
+      }),
+      ({
+        name: 'content',
+        title: 'Content',
+        type: 'array',
+        of: [{ type: "block"}]
       })
   ],
 };

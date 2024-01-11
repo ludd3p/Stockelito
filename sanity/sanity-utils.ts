@@ -13,7 +13,7 @@ export async function getNewsPosts () {
     )
 }
 
-export async function getBusiness () {
+export async function getBusinesses () {
     return client.fetch(
         groq`*[_type == 'business'] | order(_updatedAt desc){
             _id,
@@ -22,8 +22,25 @@ export async function getBusiness () {
             businessTicker,
             businessName,
             businessText,
+            "slug": slug.current,
+            content
         }[0...14]`
     )
+}
+
+export async function getBusiness(slug: string) {
+    return client.fetch(
+        groq`*[_type == 'business' && slug.current == '${slug}'] {
+            _id,
+            _createdAt,
+            updatedAt,
+            businessTicker,
+            businessName,
+            businessText,
+            "slug": slug.current,
+            content
+        }[0]`
+    );
 }
 
 export async function getHoroscope() {

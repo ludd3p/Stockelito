@@ -1,8 +1,5 @@
 'use client'
-import { ThemeProvider } from "next-themes"
-import Header from "./components/Header"
 import TopPart from "./components/TopPart/TopPart"
-import Footer from "./components/Footer"
 import News from "./components/News/News"
 import Horoscope from "./components/Horoscope/Horoscope"
 export default function Home() {

@@ -1,5 +1,5 @@
 import { Business } from "../../../../Types/SanityTypes";
-import { getBusiness } from "../../../../sanity/sanity-utils";
+import { getBusinesses } from "../../../../sanity/sanity-utils";
 import TopPartItem from "./TopPartItem";
 import { useEffect, useState } from "react";
 const TopPart = () => {
@@ -7,7 +7,7 @@ const TopPart = () => {
 
     useEffect(() => {
         const fetchNewsPosts = async () => {
-            const businessData = await getBusiness();
+            const businessData = await getBusinesses();
             setBusiness(businessData);
         };
 

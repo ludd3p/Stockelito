@@ -5,6 +5,8 @@ export type NewsItem = {
     _createdAt: Date;
     newsTitle: string;
     newsText: string;
+    slug: string;
+    content: PortableTextBlock[];
 }
 
 export type Business = {
@@ -14,7 +16,7 @@ export type Business = {
     businessName: string;
     businessText: string;
     slug: string;
-    content: PortableTextBlock[]
+    content: PortableTextBlock[];
 }
 
 export type Horoscope = {

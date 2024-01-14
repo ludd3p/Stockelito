@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 import { client } from "./lib/client";
 
-export async function getNewsPosts () {
+export async function getNewsPosts() {
     return client.fetch(
         groq`*[_type == 'news'] | order(_updatedAt desc){
             _id,
@@ -15,7 +15,7 @@ export async function getNewsPosts () {
     )
 }
 
-export async function getNewsPost (slug: string) {
+export async function getNewsPost(slug: string) {
     return client.fetch(
         groq`*[_type == 'news'&& slug.current == '${slug}']{
             _id,
@@ -29,7 +29,35 @@ export async function getNewsPost (slug: string) {
     )
 }
 
-export async function getBusinesses () {
+export async function getRelatedNews(businessName: string) {
+    return client.fetch(
+        groq`*[_type == 'news'&& business == '${businessName}'] | order(_updatedAt desc){
+            _id,
+            _createdAt,
+            _updatedAt,
+            newsTitle,
+            newsText,
+            "slug": slug.current,
+            content
+        }`
+    )
+}
+
+export async function getRumorPosts() {
+    return client.fetch(
+        groq`*[_type == 'news' && isRumor == true] | order(_updatedAt desc){
+            _id,
+            _createdAt,
+            _updatedAt,
+            newsTitle,
+            newsText,
+            "slug": slug.current,
+            content
+        }`
+    )
+}
+
+export async function getBusinesses() {
     return client.fetch(
         groq`*[_type == 'business'] | order(_updatedAt desc){
             _id,

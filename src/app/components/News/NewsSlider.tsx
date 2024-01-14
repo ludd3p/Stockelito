@@ -24,7 +24,7 @@ const NewsSlider = ({ type }: NewsSliderProps) => {
     };
 
     fetchNewsPosts();
-  }, []);
+  }, [type]);
 
   return (
     <div className='w-full'>

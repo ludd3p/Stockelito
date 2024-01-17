@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import NewsCard from './NewsCard';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/sea-green';
-import { getNewsPosts, getRelatedNews, getRumorPosts } from '../../../../sanity/sanity-utils';
+import { getRelatedNews, getRumorPosts } from '../../../../sanity/sanity-utils';
 import { NewsItem } from '../../../../Types/SanityTypes';
 
 interface NewsSliderProps {
-  type: string;
+  type?: string;
 }
 
-const NewsSlider = ({ type }: NewsSliderProps) => {
+const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,9 @@ const NewsSlider = ({ type }: NewsSliderProps) => {
         const newsData = await getRumorPosts();
         setNews(newsData);
       } else {
-        console.log(type);
+        const newsData = await getRelatedNews(type);
+
+        setNews(newsData);
       }
       
     };
@@ -26,13 +28,15 @@ const NewsSlider = ({ type }: NewsSliderProps) => {
     fetchNewsPosts();
   }, [type]);
 
-  return (
+  const perPage = news.length > 3 ? 3 : news.length;
+
+  return news.length > 0 ? (
     <div className='w-full'>
       <h1 className='my-0 pl-20'>Nyheter</h1>
       <Splide options={{
         label: 'Nyheter',
         type: 'loop',
-        perPage: 3,
+        perPage: perPage,
         perMove: 1,
         gap: '1rem',
         padding: { top: 0 },
@@ -56,7 +60,7 @@ const NewsSlider = ({ type }: NewsSliderProps) => {
         ))}
       </Splide>
     </div>
-  );
+  ) : null;
 };
 
 export default NewsSlider;

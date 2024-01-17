@@ -29,10 +29,11 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
   }, [type]);
 
   const perPage = news.length > 3 ? 3 : news.length;
+  const title = type === 'rumor' ? 'Senaste rykten' : 'Nyheter';
 
   return news.length > 0 ? (
     <div className='w-full'>
-      <h1 className='my-0 pl-20'>Nyheter</h1>
+      <h1 className='my-0 pl-20 text-3xl'>{title}</h1>
       <Splide options={{
         label: 'Nyheter',
         type: 'loop',

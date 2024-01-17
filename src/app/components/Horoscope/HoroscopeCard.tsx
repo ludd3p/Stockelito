@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Horoscope } from "../../../../Types/SanityTypes";
 
 const HoroscopeCard = (horoscope: Horoscope) => {
-    console.log(horoscope.image)
     return (
         <div className="flex flex-row justify-center items-center  bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 rounded-xl 
                         h-40 w-5/6 md:w-3/4 lg:w-1/2 overflow-hidden px-3 py-3 gap-2">

@@ -31,7 +31,7 @@ export async function getNewsPost(slug: string) {
 
 export async function getRelatedNews(businessName: string) {
     return client.fetch(
-        groq`*[_type == 'news'&& business == '${businessName}'] | order(_updatedAt desc){
+        groq`*[_type == 'news'&& isRumor != true && business -> businessName == '${businessName}'] | order(_updatedAt desc){
             _id,
             _createdAt,
             _updatedAt,

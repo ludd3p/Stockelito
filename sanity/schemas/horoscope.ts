@@ -12,23 +12,23 @@ const horoscope = {
       description: "Enter the title for this weeks horoscope"
     }),
     defineField({
-        name: "text",
-        type: "string",
-        title: "Horoscope text",
-        description: "Text for this weeks horoscope"
-      }),
-      defineField({
-        name: "image",
-        type: "image",
-        title: "Image",
-        fields: [
-            {
-                name: "alt",
-                title: "Alt",
-                type: "string"
-            }
-        ]
-      })
+      name: "text",
+      type: "string",
+      title: "Horoscope text",
+      description: "Text for this weeks horoscope"
+    }),
+    defineField({
+      name: "image",
+      type: "image",
+      title: "Image",
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string"
+        }
+      ]
+    })
   ],
 };
 

@@ -15,6 +15,7 @@ export type Business = {
     businessTicker: string;
     businessName: string;
     businessText: string;
+    businessLogo: string,
     slug: string;
     content: PortableTextBlock[];
 }

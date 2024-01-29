@@ -13,7 +13,7 @@ export interface MarketDataItem {
 }
 
 export async function scrapeMarketData(slug: string): Promise<MarketDataItem> {
-  const browser = await puppeteer.launch({ headless: "new" });
+  const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox'],});
   const page = await browser.newPage();
   const query = slug;
 

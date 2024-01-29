@@ -4,17 +4,12 @@ import { Business } from '../../../../Types/SanityTypes';
 const TopPartItem = (business: Business) => {
   const hasLogo = business.businessLogo;
 
-  const containerStyle = {
-    background: hasLogo ? 'none' : 'none'
-  };
-
   return (
     <Link
       href={`/business/${business.slug}`}
       key={business._id}
-      className="flex flex-col items-center justify-center text-center rounded-full overflow-hidden border h-16 w-16 xs:h-[4.5rem] xs:w-[4.5rem] sm:h-28 sm:w-28 transition-colors
-               hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 group"
-      style={containerStyle}
+      className="flex flex-col items-center justify-center text-center rounded-full overflow-hidden border h-16 w-16 xs:h-[4.5rem] xs:w-[4.5rem] sm:h-28 sm:w-28
+               hover:border-gray-300 dark:bg-gray-200 hover:dark:border-neutral-700 group transition hover:scale-110"
     >
       {hasLogo ? (
         <img

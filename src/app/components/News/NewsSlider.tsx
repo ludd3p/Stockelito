@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import NewsCard from './NewsCard';
-import { Splide, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/sea-green';
 import { getRelatedNews, getRumorPosts } from '../../../../sanity/sanity-utils';
 import { NewsItem } from '../../../../Types/SanityTypes';
@@ -22,7 +22,7 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
 
         setNews(newsData);
       }
-      
+
     };
 
     fetchNewsPosts();
@@ -34,13 +34,13 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
   return news.length > 0 ? (
     <div className='w-full'>
       <h1 className='my-0 pl-20 text-3xl'>{title}</h1>
-      <Splide options={{
+      <Splide hasTrack={ false } options={{
         label: 'Nyheter',
         type: 'loop',
         perPage: perPage,
         perMove: 1,
         gap: '1rem',
-        padding: { top: 0 },
+        padding: { top: 5 },
         autoWidth: false,
         autoHeight: false,
         breakpoints: {
@@ -52,13 +52,15 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
           }
         }
       }}>
-        {news.map((newsItem: NewsItem) => (
-          <SplideSlide key={newsItem._id}>
-            <div className="flex justify-center items-center w-full h-full">
-              <NewsCard {...newsItem} />
-            </div>
-          </SplideSlide>
-        ))}
+        <SplideTrack className="p-5">
+          {news.map((newsItem: NewsItem) => (
+            <SplideSlide key={newsItem._id}>
+              <div className="flex justify-center items-center w-full h-full">
+                <NewsCard {...newsItem} />
+              </div>
+            </SplideSlide>
+          ))}
+        </SplideTrack>
       </Splide>
     </div>
   ) : null;

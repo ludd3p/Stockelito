@@ -49,6 +49,11 @@ const business = {
       title: 'Content',
       type: 'array',
       of: [{ type: "block" }]
+    }),
+    defineField({
+      name: 'diUrl',
+      title: 'DI URL',
+      type: 'url',
     })
   ],
 };

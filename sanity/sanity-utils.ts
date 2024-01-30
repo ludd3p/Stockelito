@@ -68,7 +68,8 @@ export async function getBusinesses() {
             businessText,
             "slug": slug.current,
             content,
-            "businessLogo": businessLogo.asset->url
+            "businessLogo": businessLogo.asset->url,
+            diUrl
         }[0...14]`
     )
 }
@@ -85,6 +86,7 @@ export async function getBusiness(slug: string) {
             "slug": slug.current,
             content,
             "businessLogo": businessLogo.asset->url,
+            diUrl,
         }[0]`
     );
 }

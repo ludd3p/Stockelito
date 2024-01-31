@@ -17,6 +17,7 @@ async function getBusinessData(slug: string) {
 
 export default async function Page({ params }: { params: { slug: string}}) {
     const slug = decodeURIComponent(params.slug);
+    // Getting url from sanity instead of slug
     const businessData: Business = await getBusiness(slug);
     const scrapedData = await getBusinessData(businessData.diUrl);
     return <BusinessPage id={slug} data={scrapedData}/>;

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Business } from '../../../../Types/SanityTypes';
+import Image from 'next/image';
 
 const TopPartItem = (business: Business) => {
   const hasLogo = business.businessLogo;
@@ -12,7 +13,7 @@ const TopPartItem = (business: Business) => {
                hover:border-gray-300 dark:bg-gray-200 hover:dark:border-neutral-700 group transition hover:scale-110"
     >
       {hasLogo ? (
-        <img
+        <Image
           src={business.businessLogo}
           alt={business.businessTicker}
           className="w-full h-full p-1"

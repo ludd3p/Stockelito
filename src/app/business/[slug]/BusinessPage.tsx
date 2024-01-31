@@ -13,11 +13,11 @@ interface BusinessPageProps {
 }
 
 export default function BusinessPage({ id, data }: BusinessPageProps) {
-    const slug = id ;
+    const slug = id;
     const [business, setBusiness] = useState<Business | undefined>();
 
     useEffect(() => {
-        const fetchBusiness = async () => {        
+        const fetchBusiness = async () => {
             if (slug && typeof slug === 'string') {
                 const businessData = await getBusiness(slug);
                 setBusiness(businessData);
@@ -34,15 +34,20 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
             <div className="max-w-4xl rounded-xl w-4/5 bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 py-2 px-10 mb-10">
                 <PortableText value={business?.content ?? []} />
             </div>
-            <div className="grid grid-cols-4 max-w-4xl rounded-xl bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 p-2">
-                {data.data.map((item, index) => (
-                    <div key={index}>
-                        <p className="text-lg">{item.title}</p>
-                        <p>{item.value}</p>
-                    </div>
-                ))}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 justify-between max-w-4xl rounded-xl 
+                        bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 p-2">
+                {data.data.length > 0 ? (
+                    data.data.map((item, index) => (
+                        <div key={index} className="m-1">
+                            <p className="text-lg">{item.title}</p>
+                            <p className="text-sm">{item.value}</p>
+                        </div>
+                    ))
+                ) : (
+                    <p>No data available</p>
+                )}
             </div>
-            <NewsSlider type={business?.businessName}/>
+            <NewsSlider type={business?.businessName} />
         </div>
     );
 };

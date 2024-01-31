@@ -18,6 +18,7 @@ export type Business = {
     businessLogo: string,
     slug: string;
     content: PortableTextBlock[];
+    diUrl: string;
 }
 
 export type Horoscope = {

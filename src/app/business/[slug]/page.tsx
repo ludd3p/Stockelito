@@ -1,6 +1,6 @@
 import { Business } from "../../../../Types/SanityTypes";
 import { scrapeBusiness } from "../../../../data/scraper";
-import { getBusinesses } from "../../../../sanity/sanity-utils";
+import { getBusinesses, getBusiness } from "../../../../sanity/sanity-utils";
 import BusinessPage from "./BusinessPage";
 
 
@@ -17,6 +17,8 @@ async function getBusinessData(slug: string) {
 
 export default async function Page({ params }: { params: { slug: string}}) {
     const slug = decodeURIComponent(params.slug);
-    const scrapedData = await getBusinessData( slug );
+    // Getting url from sanity instead of slug
+    const businessData: Business = await getBusiness(slug);
+    const scrapedData = await getBusinessData(businessData.diUrl);
     return <BusinessPage id={slug} data={scrapedData}/>;
 }

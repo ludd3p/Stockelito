@@ -21,16 +21,15 @@ const Header = () => {
   }, []);
 
   return (
-    <header
-      className={`px-5 py-2 z-10 w-full flex items-center justify-between font-mono text-sm lg:flex-wrap 
-      ${isTop ? 'bg-transparent' : 'bg-black bg-opacity-50 dark:bg-slate-500 dark:bg-opacity-80'
-      } fixed top-0 w-full transition-all duration-500 ease-in-out`}
+    <nav
+      className={`fixed top-0 inset-x-0 px-5 py-2 z-10 w-full flex items-center justify-between font-mono text-sm lg:flex-wrap 
+      transition-all duration-500 ease-in-out border-b border-black/50 dark:border-slate-500/80
+
+      ${isTop ? 'bg-transparent' : 'bg-black bg-opacity-50 dark:bg-slate-500 dark:bg-opacity-80'}`}
     >
-      <p>
-        <Link href={'/'}>STOCKELITO</Link>
-      </p>
+      <Link href={'/'}>STOCKELITO</Link>
       <DarkModeButton />
-    </header>
+    </nav>
   );
 };
 

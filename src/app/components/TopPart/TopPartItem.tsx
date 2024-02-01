@@ -16,6 +16,8 @@ const TopPartItem = (business: Business) => {
         <Image
           src={business.businessLogo}
           alt={business.businessTicker}
+          height={0}
+          width={0}
           className="w-full h-full p-1"
         />
       ) : (

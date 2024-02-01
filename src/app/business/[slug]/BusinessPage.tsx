@@ -44,7 +44,7 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
                         </div>
                     ))
                 ) : (
-                    <p>No data available</p>
+                    <p>Ingen data tillgänglig </p>
                 )}
             </div>
             <NewsSlider type={business?.businessName} />

@@ -4,8 +4,15 @@ import Image from "next/image";
 export default function Hero() {
     return (
         <section className="w-full py-16">
-            <div className="container px-4 mx-auto flex flex-col-reverse lg:flex-row items-center justify-center lg:gap-12">
-                <div className="flex flex-col justify-center space-y-4 lg:w-1/2">
+            <div className="container px-4 mx-auto flex flex-col lg:flex-row items-center justify-center lg:gap-12">
+                <Image
+                    alt="Hero"
+                    className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom w-full lg:w-1/2 lg:aspect-square lg:order-last"
+                    height="550"
+                    src="/stonks_emoji.svg"
+                    width="550"
+                />
+                <div className="flex flex-col justify-center space-y-4 lg:w-1/2 mt-3">
                     <div className="space-y-2">
                         <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
                             Framtidens företag handplockade för dig
@@ -29,13 +36,6 @@ export default function Hero() {
                         </Link>
                     </div>
                 </div>
-                <Image
-                    alt="Hero"
-                    className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom w-full lg:w-1/2 lg:order-last lg:aspect-square"
-                    height="550"
-                    src="/stonks.jpg"
-                    width="550"
-                />
             </div>
         </section>
     );

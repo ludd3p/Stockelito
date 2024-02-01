@@ -9,7 +9,7 @@ export default function Hero() {
                     alt="Hero"
                     className="mx-auto aspect-video overflow-hidden rounded-xl object-bottom w-full lg:w-1/2 lg:aspect-square lg:order-last"
                     height="550"
-                    src="/stonks_emoji.svg"
+                    src="/Stonks_emoji.svg"
                     width="550"
                 />
                 <div className="flex flex-col justify-center space-y-4 lg:w-1/2 mt-3">

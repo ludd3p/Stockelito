@@ -29,23 +29,26 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
     }, [slug]);
 
     return (
-        <div className="flex flex-col items-center py-10 w-full max-w-7xl mx-auto">
-            <h1>{business?.businessName}</h1>
-            <div className="max-w-4xl rounded-xl w-4/5 bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 py-2 px-10 mb-10">
+        <div className="flex flex-col py-10 w-full max-w-7xl mx-auto">
+            <div className="max-w-4xl md:w-4/5 mx-auto space-y-4 mt-4 px-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl/none">{business?.businessName}</h1>
                 <PortableText value={business?.content ?? []} />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 justify-between max-w-4xl rounded-xl 
-                        bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 p-2">
-                {data.data.length > 0 ? (
-                    data.data.map((item, index) => (
-                        <div key={index} className="m-1">
-                            <p className="text-lg">{item.title}</p>
-                            <p className="text-sm">{item.value}</p>
-                        </div>
-                    ))
-                ) : (
-                    <p>Ingen data tillgänglig </p>
-                )}
+            <div className="max-w-4xl rounded-xl 
+                         p-2 mx-auto mt-10">
+                <h2 className="mb-0">Nyckeltal</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 justify-between bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10">
+                    {data.data.length > 0 ? (
+                        data.data.map((item, index) => (
+                            <div key={index} className="m-1">
+                                <p className="text-lg">{item.title}</p>
+                                <p className="text-sm">{item.value}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>Ingen data tillgänglig </p>
+                    )}
+                </div>
             </div>
             <NewsSlider type={business?.businessName} />
         </div>

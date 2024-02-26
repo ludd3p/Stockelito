@@ -10,7 +10,6 @@ export default function Custom404() {
                     <div className="max-w-fit mx-auto p-4 rounded-full shadow-sm transition-all translate-y-px bg-gray-100 hover:bg-gray-200 dark:bg-gray-600">
                         <p className="text-black dark:text-white">Tillbaka till startsidan</p>
                     </div>
-
                 </Link>
             </div>
         </div>

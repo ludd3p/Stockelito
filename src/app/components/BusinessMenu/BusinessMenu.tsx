@@ -20,7 +20,7 @@ const BusinessMenu = () => {
 
     return (
         <div className="w-full">
-            <h1 className="w-fit ml-[5%] text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl/none">Våra favoriter</h1>
+            <h1 className="w-fit ml-[5%] text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl/none mb-2">Våra favoriter</h1>
             <div className="items-center">
                 <div className="grid text-center w-full  grid-cols-5 place-items-center">
                     {itemsForRow1.map((business: Business) => (

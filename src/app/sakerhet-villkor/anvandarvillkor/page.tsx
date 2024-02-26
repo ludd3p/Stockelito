@@ -8,7 +8,7 @@ export default function anvandarvillkor() {
                 <p>Välkommen till Stockelito! Tack för att du besöker vår hemsida. Innan du använder vår tjänst, vänligen läs igenom dessa användarvillkor noggrant. Genom att använda vår hemsida samtycker du till att följa och vara bunden av dessa villkor. Om du inte godkänner något av villkoren, vänligen lämna vår hemsida.</p>
                 <div>
                     <h2>Tjänsteleverantör och Syfte:</h2>
-                    <p>Stockelito (nedan kallad "vi", "oss" eller "vår") är en onlineplattform som tillhandahåller analyser, intervjuer, rykten och spekulationer om olika företag, särskilt mindre bolag som kanske inte är välkända för allmänheten. Vår tjänst är avsedd att erbjuda användare information och insikter om dessa företag.</p>
+                    <p>Stockelito (nedan kallad &quot;vi&quot;, &quot;oss&quot; eller &quot;vår&quot;) är en onlineplattform som tillhandahåller analyser, intervjuer, rykten och spekulationer om olika företag, särskilt mindre bolag som kanske inte är välkända för allmänheten. Vår tjänst är avsedd att erbjuda användare information och insikter om dessa företag.</p>
                 </div>
                 <div>
                     <h2>Användning av Tjänsten:</h2>

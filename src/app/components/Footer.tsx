@@ -5,11 +5,11 @@ const Footer = () => {
     return (
         <div id="section_footer" className='w-full'>
         <div className='text-center py-4'>
-          <Link href="localhost:3000" className='btn btn-link hover:underline'>
+          <Link href="/sakerhet-villkor/integritetspolicy" className='btn btn-link hover:underline'>
             Inegritetspolicy
           </Link>
           <span className='mx-2'>|</span>
-          <Link href="/anvandarvillkor" className='btn btn-link hover:underline'>
+          <Link href="/sakerhet-villkor/anvandarvillkor" className='btn btn-link hover:underline'>
             Användarvillkor
           </Link>
           <span className='mx-2'>|</span>

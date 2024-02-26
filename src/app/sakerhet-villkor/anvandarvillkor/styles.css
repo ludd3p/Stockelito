@@ -1,11 +1,9 @@
-/* Generell typografi */
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
 }
 
-/* Rubriker */
 h1 {
     font-size: 2rem;
     font-weight: bold;
@@ -18,7 +16,6 @@ h2 {
     margin-bottom: 0.75rem;
 }
 
-/* Brödtext */
 p {
     font-size: 0.9rem;
     margin-bottom: 1.25rem;

@@ -1,5 +1,5 @@
 'use client'
-import TopPart from "./components/TopPart/TopPart"
+import TopPart from "./components/BusinessMenu/BusinessMenu"
 import News from "./components/News/News"
 import Horoscope from "./components/Horoscope/Horoscope"
 import Hero from "./components/Hero/Hero"

@@ -1,8 +1,8 @@
 import { Business } from "../../../../Types/SanityTypes";
 import { getBusinesses } from "../../../../sanity/sanity-utils";
-import TopPartItem from "./TopPartItem";
+import BusinessMenuItem from "./BusinessMenuItem";
 import { useEffect, useState } from "react";
-const TopPart = () => {
+const BusinessMenu = () => {
     const [business, setBusiness] = useState([]);
 
     useEffect(() => {
@@ -24,17 +24,17 @@ const TopPart = () => {
             <div className="items-center">
                 <div className="grid text-center w-full  grid-cols-5 place-items-center">
                     {itemsForRow1.map((business: Business) => (
-                        <TopPartItem key={business._id} {...business} />
+                        <BusinessMenuItem key={business._id} {...business} />
                     ))}
                 </div>
                 <div className="grid text-center w-full  grid-cols-4 place-items-center px-[10%]">
                     {itemsForRow2.map((business: Business) => (
-                        <TopPartItem key={business._id} {...business} />
+                        <BusinessMenuItem key={business._id} {...business} />
                     ))}
                 </div>
                 <div className="grid text-center w-full grid-cols-5 place-items-center">
                     {itemsForRow3.map((business: Business) => (
-                        <TopPartItem key={business._id} {...business} />
+                        <BusinessMenuItem key={business._id} {...business} />
                     ))}
                 </div>
             </div>
@@ -42,4 +42,4 @@ const TopPart = () => {
     )
 
 }
-export default TopPart;
+export default BusinessMenu;

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Business } from '../../../../Types/SanityTypes';
 import Image from 'next/image';
 
-const TopPartItem = (business: Business) => {
+const BusinessMenuItem = (business: Business) => {
   const hasLogo = business.businessLogo;
 
   return (
@@ -34,4 +34,4 @@ const TopPartItem = (business: Business) => {
   );
 };
 
-export default TopPartItem;
+export default BusinessMenuItem;

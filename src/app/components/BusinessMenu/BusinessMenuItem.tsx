@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Business } from '../../../../Types/SanityTypes';
 import Image from 'next/image';
 
-const TopPartItem = (business: Business) => {
+const BusinessMenuItem = (business: Business) => {
   const hasLogo = business.businessLogo;
 
   return (
@@ -10,7 +10,7 @@ const TopPartItem = (business: Business) => {
       href={`/business/${business.slug}`}
       key={business._id}
       className="flex flex-col items-center justify-center text-center rounded-full overflow-hidden border h-16 w-16 xs:h-[4.5rem] xs:w-[4.5rem] sm:h-28 sm:w-28
-               hover:border-gray-300 dark:bg-gray-200 hover:dark:border-neutral-700 group transition hover:scale-110"
+               hover:border-gray-300 dark:bg-white dark:text-black hover:dark:border-neutral-700 group transition hover:scale-110 shadow-md"
     >
       {hasLogo ? (
         <Image
@@ -34,4 +34,4 @@ const TopPartItem = (business: Business) => {
   );
 };
 
-export default TopPartItem;
+export default BusinessMenuItem;

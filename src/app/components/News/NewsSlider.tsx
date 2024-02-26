@@ -33,7 +33,7 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
 
   return news.length > 0 ? (
     <div className='w-full'>
-      <h1 className='my-0 pl-20 text-3xl'>{title}</h1>
+      
       <Splide hasTrack={ false } options={{
         label: 'Nyheter',
         type: 'loop',
@@ -52,6 +52,7 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
           }
         }
       }}>
+        <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl/none tracking-tighter mb-0">{title}</h1>
         <SplideTrack className="p-5">
           {news.map((newsItem: NewsItem) => (
             <SplideSlide key={newsItem._id}>

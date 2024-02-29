@@ -6,7 +6,7 @@ const Footer = () => {
         <div id="section_footer" className='w-full'>
         <div className='text-center py-4'>
           <Link href="/sakerhet-villkor/integritetspolicy" className='btn btn-link hover:underline'>
-            Inegritetspolicy
+            Integritetspolicy
           </Link>
           <span className='mx-2'>|</span>
           <Link href="/sakerhet-villkor/anvandarvillkor" className='btn btn-link hover:underline'>

@@ -2,6 +2,8 @@ import { Business } from "../../../../Types/SanityTypes";
 import { getBusinesses } from "../../../../sanity/sanity-utils";
 import BusinessMenuItem from "./BusinessMenuItem";
 import { useEffect, useState } from "react";
+
+
 const BusinessMenu = () => {
     const [business, setBusiness] = useState([]);
 
@@ -19,9 +21,9 @@ const BusinessMenu = () => {
     const itemsForRow3 = business.slice(9, 14);
 
     return (
-        <div className="w-full">
-            <h1 className="w-fit ml-[5%] text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl/none mb-2">Våra favoriter</h1>
-            <div className="items-center">
+        <div className="w-full" style={{ height: "85vh", marginTop: "10%" }}>
+            <h1 style={{color:"white", margin:"auto"}} className="w-fit text-3xl font-bold tracking-tighter lg:text-8xl">Framtidens Bolag</h1>
+            <div className="items-center" style={{marginTop:"84px"}}>
                 <div className="grid text-center w-full  grid-cols-5 place-items-center">
                     {itemsForRow1.map((business: Business) => (
                         <BusinessMenuItem key={business._id} {...business} />

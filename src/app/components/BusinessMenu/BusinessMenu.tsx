@@ -5,43 +5,46 @@ import { useEffect, useState } from "react";
 
 
 const BusinessMenu = () => {
-    const [business, setBusiness] = useState([]);
+    const [businesses, setBusinesses] = useState([]);
 
     useEffect(() => {
         const fetchNewsPosts = async () => {
             const businessData = await getBusinesses();
-            setBusiness(businessData);
+            setBusinesses(businessData);
         };
 
         fetchNewsPosts();
     }, []);
 
-    const itemsForRow1 = business.slice(0, 5);
-    const itemsForRow2 = business.slice(5, 9);
-    const itemsForRow3 = business.slice(9, 14);
 
     return (
         <div className="w-full" style={{ height: "85vh", marginTop: "10%" }}>
-            <h1 style={{color:"white", margin:"auto"}} className="w-fit text-3xl font-bold tracking-tighter lg:text-8xl">Framtidens Bolag</h1>
-            <div className="items-center" style={{marginTop:"84px"}}>
-                <div className="grid text-center w-full  grid-cols-5 place-items-center">
-                    {itemsForRow1.map((business: Business) => (
-                        <BusinessMenuItem key={business._id} {...business} />
-                    ))}
-                </div>
-                <div className="grid text-center w-full  grid-cols-4 place-items-center px-[10%]">
-                    {itemsForRow2.map((business: Business) => (
-                        <BusinessMenuItem key={business._id} {...business} />
-                    ))}
-                </div>
-                <div className="grid text-center w-full grid-cols-5 place-items-center">
-                    {itemsForRow3.map((business: Business) => (
-                        <BusinessMenuItem key={business._id} {...business} />
-                    ))}
+            <div className="items-center" style={{ marginTop: "84px" }}>
+                <div className="flex justify-center items-center h-screen relative" >
+                    {businesses.map((business: Business, index: number) => {
+                        const radius = 750; // Large radius for a wide spread
+                        // Start and end angles to create an arc covering 60% of a full circle
+                        const startAngle = 1.8 / Math.PI; // Starts just after the top right
+                        const endAngle = 0.8 * Math.PI;
+                        const theta = startAngle + (endAngle - startAngle) * (index / (businesses.length - 1));
+                        // Calculate x and y positions based on the theta angle
+                        const x = 600 + radius * Math.cos(theta);
+                        // Increase the tilt effect to make it more pronounced
+                        const tiltEffect = -50; // Increased tilt effect for greater visual impact
+                        // Adjust y for a more dramatic tilt, with more influence from the sine function
+                        const y = -150 + radius * Math.sin(theta) - Math.sin(index * Math.PI / (businesses.length - 1)) * tiltEffect;
+                        return (
+                            <div key={business._id} className={`absolute w-12 h-12 rounded-full`} style={{
+                                top: `${y}px`, left: `${x}px`
+                            }}>
+                                <BusinessMenuItem  {...business} />
+                            </div>
+                        )
+                    }
+                    )}
                 </div>
             </div>
-        </div>
+        </div >
     )
-
 }
 export default BusinessMenu;

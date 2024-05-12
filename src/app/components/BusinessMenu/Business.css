@@ -1,13 +1,18 @@
 .fire-ball {
-    box-shadow: 
-      0px 0px 15px 8px #ffffff,
-      0px 0px 25px 15px #2b9ce2,
-      0px 0px 35px 22px #5e06aa;
-  }
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(16, 16, 16, 0.5) 53.5%, rgba(40, 40, 40, 0.5) 74%, rgba(60, 60, 60, 0.5) 89.5%, rgba(102, 102, 102, 0.5) 95%, rgba(191, 191, 191, 0.5) 100%),
+    radial-gradient(65.38% 65.38% at 50% 34.62%, rgba(197, 165, 91, 0) 21%, rgba(197, 165, 91, 0) 82.5%, rgba(197, 165, 91, 0) 100%);
+  border: 1px solid;
+  border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: 0px 4px 4px 0px #00000040;
 
-.fire-ball:hover{
-    box-shadow: 
-    0px 0px 60px 30px #ffffff,
-    0px 0px 100px 60px #2b9ce2,
-    0px 0px 140px 90px #5e06aa;
+}
+
+.fire-ball:hover {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(16, 16, 16, 0.5) 53.5%, rgba(40, 40, 40, 0.5) 74%, rgba(60, 60, 60, 0.5) 89.5%, rgba(102, 102, 102, 0.5) 95%, rgba(191, 191, 191, 0.5) 100%),
+    radial-gradient(65.38% 65.38% at 50% 34.62%, rgba(197, 165, 91, 0) 21%, rgba(197, 165, 91, 0.148734) 82.5%, rgba(197, 165, 91, 0.5) 100%);
+  border: 2px solid;
+  border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 100%);
+  box-shadow: 0px 0px 25px 0px #C19F50;
+  box-shadow: 0px 0px 10px 0px #FFFFFF40;
+
 }

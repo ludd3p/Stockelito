@@ -10,9 +10,8 @@ const BusinessMenuItem = (business: Business) => {
     <Link
       href={`/business/${business.slug}`}
       key={business._id}
-      style={{backgroundColor:"white",width:"9rem",height:"9rem"}}
-      className="fire-ball flex flex-col items-center justify-center text-center rounded-full overflow-hidden border h-16 w-16 xs:h-[4.5rem] xs:w-[4.5rem] sm:h-28 sm:w-28
-               hover:border-gray-300 dark:bg-white dark:text-black hover:dark:border-neutral-700 group transition hover:scale-110 shadow-md"
+      style={{ width: "100px", height: "100px" }}
+      className="fire-ball flex flex-col items-center justify-center text-center rounded-full overflow-hidden border h-16 w-16 xs:h-[4.5rem] xs:w-[4.5rem] sm:h-28 sm:w-28 group transition hover:scale-110 shadow-md"
     >
       {hasLogo ? (
         <Image
@@ -27,9 +26,6 @@ const BusinessMenuItem = (business: Business) => {
           <h1 className="text-lg sm:text-2xl font-semibold">
             {business.businessTicker}
           </h1>
-          <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-            -&gt;
-          </span>
         </div>
       )}
     </Link>

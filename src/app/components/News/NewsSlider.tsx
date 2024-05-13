@@ -32,9 +32,9 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
   const title = type === 'rumor' ? 'Senaste rykten' : 'Nyheter';
 
   return news.length > 0 ? (
-    <div className='w-full'>
-      
-      <Splide hasTrack={ false } options={{
+    <div className='w-full' style={{ minHeight: "80vh" }}>
+
+      <Splide hasTrack={false} options={{
         label: 'Nyheter',
         type: 'loop',
         perPage: perPage,
@@ -56,7 +56,7 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
         <SplideTrack className="p-5">
           {news.map((newsItem: NewsItem) => (
             <SplideSlide key={newsItem._id}>
-              <div className="flex justify-center items-center w-full h-full">
+              <div className="flex justify-center items-center w-full h-full" style={{ minHeight: "80vh" }}>
                 <NewsCard {...newsItem} />
               </div>
             </SplideSlide>

@@ -14,14 +14,14 @@ const NewsCard = (newsItem: NewsItem) => {
     hour: '2-digit',
     minute: '2-digit',
   });
-  
+
 
   return (
     <>
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <img src="https://taroteca-studio.com/userdata/public/gfx/073c62f486bc27ae35361abcf4149049.jpg" alt="Avatar" style={{ width: "300px", height: "300px", }} />
+            <img src="/tarot-card-dark.svg" alt="Avatar" style={{ width: "600px", height: "600px" }} />
           </div>
           <div className="flip-card-back">
             <div className="flex justify-center items-center w-full h-full">

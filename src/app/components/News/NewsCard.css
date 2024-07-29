@@ -32,6 +32,6 @@
 }
 
 .flip-card-back {
-    color: black    ;
+    color: black;
     transform: rotateY(180deg);
 }

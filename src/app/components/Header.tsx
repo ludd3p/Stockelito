@@ -28,6 +28,7 @@ const Header = () => {
       ${isTop ? 'bg-transparent' : 'bg-black bg-opacity-50 dark:bg-slate-500 dark:bg-opacity-80'}`}
     >
       <Link href={'/'}>STOCKELITO</Link>
+      <Link href={'/wisdoms'}>WISDOMS</Link>
       {/* <DarkModeButton /> */}
     </nav>
   );

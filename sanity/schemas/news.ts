@@ -17,6 +17,11 @@ const news = {
       type: 'boolean'
     }),
     defineField({
+      title: 'Did this wisdom come true?',
+      name: 'isFulfilled',
+      type: 'boolean'
+    }),
+    defineField({
       name: "newsText",
       type: "string",
       title: "News text",

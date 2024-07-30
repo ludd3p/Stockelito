@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { NewsItem } from "../../../../Types/SanityTypes";
 import "./NewsCard.css"
+import Image from "next/image";
 
 const NewsCard = (newsItem: NewsItem) => {
   const createdAt = new Date(newsItem._createdAt);
@@ -21,7 +22,7 @@ const NewsCard = (newsItem: NewsItem) => {
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <img src="/tarot-card-dark.svg" alt="Avatar" />
+            <Image src="/tarot-card-dark.svg" alt="Avatar"  width="300" height="300"/>
           </div>
           <div className="flip-card-back">
             <div className="flex justify-center items-center w-full h-full">

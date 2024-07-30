@@ -5,7 +5,7 @@ import '@splidejs/react-splide/css/sea-green';
 import { getRelatedNews, getRumorPosts } from '../../../../sanity/sanity-utils';
 import { NewsItem } from '../../../../Types/SanityTypes';
 
-interface NewsSliderProps {
+export interface NewsSliderProps {
   type?: string;
 }
 

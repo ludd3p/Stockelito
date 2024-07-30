@@ -4,6 +4,7 @@ export type NewsItem = {
     _id: string;
     _createdAt: Date;
     newsTitle: string;
+    isFulfilled: boolean;
     newsText: string;
     slug: string;
     content: PortableTextBlock[];

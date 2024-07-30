@@ -9,6 +9,7 @@ export async function getNewsPosts() {
             _updatedAt,
             newsTitle,
             newsText,
+            isFulfilled,
             "slug": slug.current,
             content
         }`
@@ -35,6 +36,7 @@ export async function getRelatedNews(businessName: string) {
             _id,
             _createdAt,
             _updatedAt,
+            isFullfiled
             newsTitle,
             newsText,
             "slug": slug.current,

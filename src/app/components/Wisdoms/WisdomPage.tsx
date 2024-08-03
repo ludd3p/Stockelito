@@ -6,9 +6,8 @@ interface WisdomPageProps {
 }
 
 export const WisdomPage = ({ wisdoms }: WisdomPageProps) => {
-    console.log(wisdoms);
     return (
-        <div className="pt-16">
+        <div className="pt-16 max-w-5xl">
             <h1 className="text-4xl font-bold mb-6 text-center">Wisdoms</h1>
             <div className="flex flex-wrap justify-start -mx-4">
                 {wisdoms.map((wisdom: NewsItem) => (

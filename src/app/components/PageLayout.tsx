@@ -20,7 +20,7 @@ export default function PageLayout({
         <div>
             <ThemeProvider defaultTheme={theme} attribute="class">
                 <Header />
-                <main className="flex flex-col items-center w-full max-w-6xl mx-auto top-0">
+                <main className="flex flex-col items-center w-full max-w-7xl mx-auto top-0">
                     {children}
                 </main>
                 <Footer />

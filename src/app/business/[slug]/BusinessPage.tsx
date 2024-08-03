@@ -6,6 +6,8 @@ import { PortableText } from "@portabletext/react";
 import './styles.css';
 import NewsSlider from "@/app/components/News/NewsSlider";
 import { MarketDataItem } from "../../../../data/scraper";
+import Image from "next/image";
+import TwitterTimeline from "@/app/components/TwitterTimeline/TwitterTimeline";
 
 interface BusinessPageProps {
     id: string;
@@ -29,29 +31,62 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
     }, [slug]);
 
     return (
-        <div className="flex flex-col py-10 w-full max-w-7xl mx-auto">
-            <div className="max-w-4xl md:w-4/5 mx-auto space-y-4 mt-4 px-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl/none">{business?.businessName}</h1>
-                <PortableText value={business?.content ?? []} />
-            </div>
-            <div className="max-w-4xl rounded-xl 
+
+        <div className="flex mt-12 w-full">
+
+            <div className="w-1/2 p-4">
+                <div className="mb-4">
+                    <div className="flex gap-4 items-center">
+                        <Image width={120} height={120} src={business?.businessLogo || "/magic-balls.png"} alt="" />
+                        <h2 className="text-xl font-bold mb-0">{`${business?.businessName} (${business?.businessTicker})`}</h2>
+                    </div>
+                    <p>{business?.businessText}</p>
+                </div>
+                <div className="mb-4">
+                    <h2 className="text-lg font-bold">Market Watch</h2>
+                    <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 justify-between bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 max-w-4xl rounded-xl 
                          p-2 mx-auto mt-10">
-                <h2 className="mb-0">Nyckeltal</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 justify-between bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10">
-                    {data.data.length > 0 ? (
-                        data.data.map((item, index) => (
-                            <div key={index} className="m-1">
-                                <p className="text-lg">{item.title}</p>
-                                <p className="text-sm">{item.value}</p>
-                            </div>
-                        ))
-                    ) : (
-                        <p>Ingen data tillgänglig </p>
-                    )}
+                        {data.data.length > 0 ? (
+                            data.data.map((item, index) => (
+                                <div key={index} className="m-2">
+                                    <p className="text-lg">{item.title}</p>
+                                    <p className="text-sm">{item.value}</p>
+                                </div>
+                            ))
+                        ) : (
+                            <p>Ingen data tillgänglig </p>
+                        )}
+                    </div>
+                </div>
+                <div className="mb-4">
+                    <h2 className="text-lg font-bold">Company Vision</h2>
+                    <p>Company's vision and goals.</p>
+                </div>
+                <div className="mb-4">
+                    <h2 className="text-lg font-bold">Key Statistics</h2>
+                    <p>Important statistics.</p>
+                </div>
+                <div className="mb-4">
+                    <h2 className="text-lg font-bold">Company Information</h2>
+                    <PortableText value={business?.content ?? []} />
                 </div>
             </div>
-            <NewsSlider type={business?.businessName} />
-        </div>
+
+
+            <div className="w-1/2  p-4 overflow-y-scroll">
+                <h2 className="text-lg font-bold mb-4">Social Media Posts</h2>
+                <div className="space-y-4" >
+                    <TwitterTimeline />
+                </div>
+            </div>
+        </div >
+        //     <div className="max-w-4xl rounded-xl 
+        //                  p-2 mx-auto mt-10">
+        //         <h2 className="mb-0">Nyckeltal</h2>
+        //        
+        //     </div>
+        //     <NewsSlider type={business?.businessName} />
+        // </div>
     );
 };
 

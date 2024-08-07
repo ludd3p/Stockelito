@@ -60,7 +60,7 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
                 </div>
                 <div className="mb-4">
                     <h2 className="text-lg font-bold">Company Vision</h2>
-                    <p>Company's vision and goals.</p>
+                    <p>Visions and Goals</p>
                 </div>
                 <div className="mb-4">
                     <h2 className="text-lg font-bold">Key Statistics</h2>

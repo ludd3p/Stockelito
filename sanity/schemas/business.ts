@@ -36,6 +36,12 @@ const business = {
       ]
     }),
     defineField({
+      name: "twitterUrl",
+      type: "string",
+      title: "Twitter URL",
+      description: "Enter URL to grab news from twitter"
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',

@@ -30,6 +30,10 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
 
     }, [slug]);
 
+
+    if(!business) return <div>Loading...</div>;
+
+
     return (
 
         <div className="flex mt-12 w-full">
@@ -73,10 +77,9 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
             </div>
 
 
-            <div className="w-1/2  p-4 overflow-y-scroll">
-                <h2 className="text-lg font-bold mb-4">Social Media Posts</h2>
+            <div className="w-1/2 bg-white mt-2">
                 <div className="space-y-4" >
-                    <TwitterTimeline />
+                    <TwitterTimeline twitterUrl={business?.twitterUrl || ""} />
                 </div>
             </div>
         </div >

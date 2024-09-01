@@ -16,7 +16,8 @@ export type Business = {
     businessTicker: string;
     businessName: string;
     businessText: string;
-    twitterUrl: string;
+    twitterTimelineUrl: string,
+    twitterIds: string[],
     businessLogo: string,
     slug: string;
     content: PortableTextBlock[];

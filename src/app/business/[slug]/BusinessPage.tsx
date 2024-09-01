@@ -8,6 +8,7 @@ import NewsSlider from "@/app/components/News/NewsSlider";
 import { MarketDataItem } from "../../../../data/scraper";
 import Image from "next/image";
 import TwitterTimeline from "@/app/components/TwitterTimeline/TwitterTimeline";
+import { TwitterSpecific } from "@/app/components/TwitterSpecifik/TwitterSpecific";
 
 interface BusinessPageProps {
     id: string;
@@ -31,8 +32,8 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
     }, [slug]);
 
 
-    if(!business) return <div>Loading...</div>;
 
+    if (!business) return <div>Loading...</div>;
 
     return (
 
@@ -77,9 +78,14 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
             </div>
 
 
-            <div className="w-1/2 bg-white mt-2">
+            <div className="w-1/2 mt-2">
                 <div className="space-y-4" >
-                    <TwitterTimeline twitterUrl={business?.twitterUrl || ""} />
+                    {business?.twitterTimelineUrl
+                        ?
+                        <TwitterTimeline twitterUrl={business?.twitterTimelineUrl || ""} />
+                        :
+                        <TwitterSpecific twitterIds={business.twitterIds || []} />}
+
                 </div>
             </div>
         </div >

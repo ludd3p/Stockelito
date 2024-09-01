@@ -36,10 +36,21 @@ const business = {
       ]
     }),
     defineField({
-      name: "twitterUrl",
+      name: "twitterTimelineUrl",
       type: "string",
       title: "Twitter URL",
       description: "Enter URL to grab news from twitter"
+    }),
+    defineField({
+      name: "twitterIds",
+      type: "array",
+      of: [
+        {
+          type: 'string',
+          title: 'Twitter ID',
+        },],
+      title: "Twitter IDs for specific posts",
+      description: "Enter a couple of tweet IDs to show specific tweets"
     }),
     defineField({
       name: 'slug',

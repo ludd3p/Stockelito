@@ -17,8 +17,8 @@ const BusinessMenuItem = (business: Business) => {
         <Image
           src={business.businessLogo}
           alt={business.businessTicker}
-          height={0}
-          width={0}
+          height={1000}
+          width={1000}
           className="w-full h-full p-1"
         />
       ) : (

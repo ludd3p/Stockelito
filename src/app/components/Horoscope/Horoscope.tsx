@@ -22,7 +22,7 @@ const HoroscopeComponent = () => {
       <div className="container" >
         <div className="flex flex-col gap-2">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl/none mb-0">Veckans horoskop</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl lg:text-5xl/none mb-0">Månadens horoskop</h2>
             <p className="text-gray-500 dark:text-gray-400 mt-0">{horoscopeItem?.title}</p>
           </div>
           <div >

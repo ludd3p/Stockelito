@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
 import { WisdomPage } from "../components/Wisdoms/WisdomPage";
-import { NewsSliderProps } from "../components/News/NewsSlider";
 import { getNewsPosts } from "../../../sanity/sanity-utils";
 
 

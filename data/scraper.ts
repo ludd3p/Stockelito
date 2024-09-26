@@ -15,7 +15,7 @@ export interface MarketDataItem {
 
 // PITA to deploy on vercel
 export async function scrapeMarketData(slug: string): Promise<MarketDataItem> {
-  const browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox'], });
+  const browser = await puppeteer.launch({ headless: 'shell', args: ['--no-sandbox'], });
   const page = await browser.newPage();
   const query = slug;
 

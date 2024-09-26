@@ -71,6 +71,12 @@ const business = {
       name: 'diUrl',
       title: 'DI URL',
       type: 'url',
+    }),
+    defineField({
+      name: 'tradingViewSymbol',
+      title: 'TradingView Symbol',
+      type: 'string',
+      description: "Enter the symbol of the company, can be found at https://www.tradingview.com/widget-docs/widgets/charts/symbol-overview/"
     })
   ],
 };

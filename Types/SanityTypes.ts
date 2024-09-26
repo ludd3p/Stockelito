@@ -22,6 +22,7 @@ export type Business = {
     slug: string;
     content: PortableTextBlock[];
     diUrl: string;
+    tradingViewSymbol: string;
 }
 
 export type Horoscope = {

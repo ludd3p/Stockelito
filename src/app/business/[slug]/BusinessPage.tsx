@@ -59,7 +59,7 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
                 <div className="mb-4">
                 {business?.tradingViewSymbol && (
                     <SymbolOverview 
-                        width={600}
+                        width="100%"
                         colorTheme="dark"
                         chartType="candlesticks"
                         downColor="#800080"

@@ -41,7 +41,9 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
     }, [slug]);
 
 
-    if (!business) return <div>Loading...</div>;
+    if (!business) return(
+        <div className="mt-16 w-full text-center">No bizniz</div>
+        );
 
     return (
 

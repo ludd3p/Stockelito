@@ -9,11 +9,20 @@ import { MarketDataItem } from "../../../../data/scraper";
 import Image from "next/image";
 import TwitterTimeline from "@/app/components/TwitterTimeline/TwitterTimeline";
 import { TwitterSpecific } from "@/app/components/TwitterSpecifik/TwitterSpecific";
+import dynamic from "next/dynamic";
+import { SymbolOverview } from "react-ts-tradingview-widgets";
 
 interface BusinessPageProps {
     id: string;
     data: MarketDataItem;
 }
+
+const SymbolOverviewNoSSR = dynamic(
+    () => import("react-ts-tradingview-widgets").then((w) => w.SymbolOverview),
+    {
+        ssr: false,
+    }
+);
 
 export default function BusinessPage({ id, data }: BusinessPageProps) {
     const slug = id;
@@ -32,12 +41,14 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
     }, [slug]);
 
 
-
-    if (!business) return <div>Loading...</div>;
+    if (!business) return(
+        <div className="mt-16 w-full text-center">No bizniz</div>
+        );
 
     return (
 
         <div className="flex mt-12 w-full">
+
 
             <div className="w-1/2 p-4">
                 <div className="mb-4">
@@ -48,7 +59,21 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
                     <p>{business?.businessText}</p>
                 </div>
                 <div className="mb-4">
-                    <h2 className="text-lg font-bold">Market Watch</h2>
+                {business?.tradingViewSymbol && (
+                    <SymbolOverview 
+                        width="100%"
+                        colorTheme="dark"
+                        chartType="area"
+                        downColor="#800080"
+                        borderDownColor="#800080"
+                        wickDownColor="#800080"
+                        dateFormat="dd MMM 'yy"
+                        timeHoursFormat="24-hours"
+                        symbols={[
+                            [business.tradingViewSymbol]
+                        ]} />
+                        )}
+
                     <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 justify-between bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 max-w-4xl rounded-xl 
                          p-2 mx-auto mt-10">
                         {data.data.length > 0 ? (

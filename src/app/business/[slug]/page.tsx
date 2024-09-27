@@ -4,7 +4,6 @@ import { getBusinesses, getBusiness } from "../../../../sanity/sanity-utils";
 import BusinessPage from "./BusinessPage";
 import { MarketDataItem } from "../../../../data/scraper";
 
-
 export async function generateStaticParams() {
     const businesses = await getBusinesses();
     return businesses.map((business: Business) => ({

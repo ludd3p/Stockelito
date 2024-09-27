@@ -63,11 +63,12 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
                     <SymbolOverview 
                         width="100%"
                         colorTheme="dark"
-                        chartType="candlesticks"
+                        chartType="area"
                         downColor="#800080"
                         borderDownColor="#800080"
                         wickDownColor="#800080"
                         dateFormat="dd MMM 'yy"
+                        timeHoursFormat="24-hours"
                         symbols={[
                             [business.tradingViewSymbol]
                         ]} />

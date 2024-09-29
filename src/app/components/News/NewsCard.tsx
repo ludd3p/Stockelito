@@ -26,8 +26,8 @@ const NewsCard = (newsItem: NewsItem) => {
           </div>
           <div className="flip-card-back">
             <div className="flex justify-center items-center w-full h-full">
-              <Link href={`/news/${newsItem.slug}`} className="flex flex-col group relative rounded-xl 
-        px-2 pt-4 pb-2 w-80 lg:h-120 lg:w-45 overflow-hidden cursor-pointer justify-between
+              <div className="flex flex-col group relative rounded-xl 
+        px-2 pt-4 pb-2 w-80 lg:h-120 lg:w-45 overflow-hidden justify-between
         transition hover:scale-105" style={{ height: "380px",marginTop:"86px" }}>
                 <div className="absolute inset-0 bg-black opacity-30 dark:bg-white group-hover:opacity-60" />
                 <div className="relative flex flex-col gap-3">
@@ -37,7 +37,7 @@ const NewsCard = (newsItem: NewsItem) => {
                 <div>
                   <p className="ml-auto text-sm w-fit text-gray-500">Skrivet {formattedDate} kl. {formattedTime}</p>
                 </div>
-              </Link>
+              </div>
             </div>
           </div>
         </div>

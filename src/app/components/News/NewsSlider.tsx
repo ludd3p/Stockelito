@@ -29,7 +29,7 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
   }, [type]);
 
   const perPage = news.length > 3 ? 3 : news.length;
-  const title = type === 'rumor' ? 'Färska rykten' : 'Nyheter';
+  const title = type === 'rumor' ? 'Tarrotkorten visar...' : 'Nyheter';
 
   const threeNews = news?.slice(0, 3);
 

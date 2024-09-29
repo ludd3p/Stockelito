@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Stockelito',
   description: 'Hand picked stocks',
+  icons: [{ rel: 'icon', url: '/favicon.ico' }],
 }
 
 export default function RootLayout({

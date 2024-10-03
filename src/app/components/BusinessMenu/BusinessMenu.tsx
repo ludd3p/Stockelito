@@ -24,13 +24,14 @@ const BusinessMenu = () => {
     return (
         <div className="w-full" style={{ height: "85vh", marginTop: "10%" }}>
             <div className="items-center" style={{ marginTop: "84px" }}>
-                <div className="flex justify-center items-center h-screen relative">
-                    
+                <div className="flex justify-center items-center h-screen relative"
+                    style={{ position: 'relative' }}>
+
                     {/*Div för att trigga hover*/}
-                    <div 
-                        className="absolute w-36 h-36 bg-blue-500 opacity-50 rounded-full cursor-pointer"
+                    <div
+                        className={`fire-ball absolute w-36 h-36 bg-blue-500 rounded-full cursor-pointer transition-opacity duration-1000 ease-in-out ${startTransition ? 'opacity-0' : 'opacity-50'}`}
                         style={{
-                            top: '56%', left: '51%', transform: 'translate(-50%, -50%)',
+                            top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
                         }}
                         onMouseEnter={handleMouseEnter}
                     >
@@ -44,7 +45,7 @@ const BusinessMenu = () => {
 
                         const finalX = 600 + radius * Math.cos(theta);
                         const tiltEffect = -50;
-                        const finalY = -150 + radius * Math.sin(theta) - Math.sin(index * Math.PI / (businesses.length - 1)) * tiltEffect +25;
+                        const finalY = -150 + radius * Math.sin(theta) - Math.sin(index * Math.PI / (businesses.length - 1)) * tiltEffect + 25;
 
                         const initialX = 650;
                         const initialY = 700;

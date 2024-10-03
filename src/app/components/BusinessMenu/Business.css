@@ -1,9 +1,22 @@
+:root {
+  --glow-color: hsl(186 100% 69%);
+}
+
 .fire-ball {
   background: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.5) 0%, rgba(16, 16, 16, 0.5) 53.5%, rgba(40, 40, 40, 0.5) 74%, rgba(60, 60, 60, 0.5) 89.5%, rgba(102, 102, 102, 0.5) 95%, rgba(191, 191, 191, 0.5) 100%),
     radial-gradient(65.38% 65.38% at 50% 34.62%, rgba(197, 165, 91, 0) 21%, rgba(197, 165, 91, 0) 82.5%, rgba(197, 165, 91, 0) 100%);
   border: 1px solid;
   border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 100%);
   box-shadow: 0px 4px 4px 0px #00000040;
+
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
+    0px 0px 0.5em 0px var(--glow-color);
+  animation: border-flicker 2s linear infinite;
 
 }
 
@@ -14,5 +27,129 @@
   border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 100%);
   box-shadow: 0px 0px 25px 0px #C19F50;
   box-shadow: 0px 0px 10px 0px #FFFFFF40;
+  animation: none
+}
 
+
+
+
+
+@keyframes faulty-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 0.1;
+  }
+
+  4% {
+    opacity: 0.5;
+  }
+
+  19% {
+    opacity: 0.5;
+  }
+
+  21% {
+    opacity: 0.1;
+  }
+
+  23% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0.5;
+  }
+
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes border-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  4% {
+    opacity: 0.1;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .glowing-btn {
+    font-size: 1em;
+  }
 }

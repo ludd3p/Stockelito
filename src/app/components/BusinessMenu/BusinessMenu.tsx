@@ -29,7 +29,7 @@ const BusinessMenu = () => {
 
                     {/*Div för att trigga hover*/}
                     <div
-                        className={`fire-ball absolute w-36 h-36 bg-blue-500 rounded-full cursor-pointer transition-opacity duration-1000 ease-in-out ${startTransition ? 'opacity-0' : 'opacity-50'}`}
+                        className={`fire-ball absolute w-36 h-36 bg-blue-500 rounded-full transition-opacity duration-1000 ease-in-out ${startTransition ? 'opacity-0' : 'opacity-50'}`}
                         style={{
                             top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
                         }}

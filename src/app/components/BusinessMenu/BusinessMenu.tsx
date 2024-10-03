@@ -28,14 +28,14 @@ const BusinessMenu = () => {
                     style={{ position: 'relative' }}>
 
                     {/*Div för att trigga hover*/}
-                    <div
+                    {!startTransition && <div
                         className={`fire-ball absolute w-36 h-36 bg-blue-500 rounded-full transition-opacity duration-1000 ease-in-out ${startTransition ? 'opacity-0' : 'opacity-50'}`}
                         style={{
                             top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
                         }}
                         onMouseEnter={handleMouseEnter}
                     >
-                    </div>
+                    </div>}
 
                     {businesses.map((business: Business, index: number) => {
                         const radius = 750;

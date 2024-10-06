@@ -29,9 +29,20 @@ export default function Home() {
   if (isSmallScreen) { return <div className="flex justify-center items-center h-[80vh] w-full text-2xl text-center">Stockelito does not currently support small devices</div> }
 
   return (
-    <div className="flex flex-col items-center pb-10 w-full max-w-7xl mx-auto">
-      <Hero />
-      <News />
-    </div>
+    <div style={{
+      position: "absolute",
+      backgroundImage: "url('/curtains.jpg')",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height:"100vh"
+    }} >
+      <div className="flex flex-col items-center pb-10 w-full max-w-7xl mx-auto">
+        <Hero />
+        <News />
+      </div>
+    </div >
   )
 }

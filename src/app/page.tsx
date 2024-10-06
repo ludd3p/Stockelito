@@ -39,6 +39,7 @@ export default function Home() {
       width: "100%",
       height:"100vh"
     }} >
+      
       <div className="flex flex-col items-center pb-10 w-full max-w-7xl mx-auto">
         <Hero />
         <News />

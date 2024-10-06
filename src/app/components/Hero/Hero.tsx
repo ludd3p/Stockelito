@@ -13,7 +13,7 @@ export default function Hero() {
                 maxWidth: '2100px',
                 width: '100%',
                 borderRadius: "16px",
-                aspectRatio: "16 / 9", // Set dynamic aspect ratio (16:9 in this case)
+                minHeight:"100vh"
             }}>
 
             <BusinessMenu />

@@ -34,16 +34,19 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
   const threeNews = news?.slice(0, 3);
 
   return threeNews.length > 0 ? (
-    <div className='container mx-auto p-4' style={{ minHeight: "50vh" }}>
-      <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl/none tracking-tighter mb-6">{title}</h1>
-      <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
-        {threeNews.map((newsItem: NewsItem) => (
-          <div key={newsItem._id} className="flex justify-center items-center w-full h-full">
-            <NewsCard {...newsItem} />
-          </div>
-        ))}
-      </div>
+    <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg" style={{paddingBottom:"80px"}}>
 
+      <div className='container mx-auto p-4' style={{ minHeight: "50vh" }}>
+        <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl/none tracking-tighter mb-6">{title}</h1>
+        <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+          {threeNews.map((newsItem: NewsItem) => (
+            <div key={newsItem._id} className="flex justify-center items-center w-full h-full">
+              <NewsCard {...newsItem} />
+            </div>
+          ))}
+        </div>
+
+      </div>
       {/* <Splide hasTrack={false} options={{
         label: 'Nyheter',
         type: 'loop',

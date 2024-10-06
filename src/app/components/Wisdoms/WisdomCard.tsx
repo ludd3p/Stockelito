@@ -25,6 +25,8 @@ export const WisdomCard = ({ wisdom }: { wisdom: NewsItem }) => {
                     backgroundImage: 'url("/tarot-card-light.svg")',
                     backgroundSize: 'contain', // Ensures the image covers the entire div
                     backgroundPosition: 'center', // Centers the image within the div
+                    textShadow: "-1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white",
+
                 }}
             >
                 <h2 className="text-2xl font-bold mb-4 text-black">{wisdom.newsTitle}</h2>
@@ -52,7 +54,7 @@ export const WisdomCard = ({ wisdom }: { wisdom: NewsItem }) => {
                     </div>
                 )}
             </div>
-        </div>
+        </div >
 
 
     );

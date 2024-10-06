@@ -20,9 +20,6 @@ const BusinessMenu = () => {
         setStartTransition(true);
     };
 
-    // Get viewport dimensions for percentage calculations
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
 
     return (
         <div className="w-full">

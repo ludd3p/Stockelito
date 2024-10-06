@@ -16,7 +16,7 @@
     0px 0px 0.5em 0px var(--glow-color);
   box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
     0px 0px 0.5em 0px var(--glow-color);
-  animation: border-flicker 2s linear infinite;
+  animation: border-flicker 5s linear infinite;
 
 }
 

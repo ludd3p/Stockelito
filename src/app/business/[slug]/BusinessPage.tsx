@@ -47,73 +47,73 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
 
     return (
 
-            <div className="flex mt-20 w-full">
+        <div className="flex mt-20 w-full">
 
 
-                <div className="w-1/2 p-4">
-                    <div className="mb-4">
-                        <div className="flex gap-4 items-center">
-                            <Image width={120} height={120} src={business?.businessLogo || "/magic-balls.png"} alt="" />
-                            <h2 className="text-xl font-bold mb-0">{`${business?.businessName} (${business?.businessTicker})`}</h2>
-                        </div>
-                        <p>{business?.businessText}</p>
+            <div className="w-1/2 p-4">
+                <div className="mb-4">
+                    <div className="flex gap-4 items-center">
+                        <Image width={120} height={120} src={business?.businessLogo} alt="" />
+                        <h2 className="text-xl font-bold mb-0">{`${business?.businessName} (${business?.businessTicker})`}</h2>
                     </div>
-                    <div className="mb-4">
-                        {business?.tradingViewSymbol && (
-                            <SymbolOverview
-                                width="100%"
-                                colorTheme="dark"
-                                chartType="area"
-                                downColor="#800080"
-                                borderDownColor="#800080"
-                                wickDownColor="#800080"
-                                dateFormat="dd MMM 'yy"
-                                timeHoursFormat="24-hours"
-                                symbols={[
-                                    [business.tradingViewSymbol]
-                                ]} />
-                        )}
+                    <p>{business?.businessText}</p>
+                </div>
+                <div className="mb-4">
+                    {business?.tradingViewSymbol && (
+                        <SymbolOverview
+                            width="100%"
+                            colorTheme="dark"
+                            chartType="area"
+                            downColor="#800080"
+                            borderDownColor="#800080"
+                            wickDownColor="#800080"
+                            dateFormat="dd MMM 'yy"
+                            timeHoursFormat="24-hours"
+                            symbols={[
+                                [business.tradingViewSymbol]
+                            ]} />
+                    )}
 
-                        <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 justify-between bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 max-w-4xl rounded-xl 
+                    <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-4 justify-between bg-black bg-opacity-10 dark:bg-white dark:bg-opacity-10 max-w-4xl rounded-xl 
                          p-2 mx-auto mt-10">
-                            {data.data.length > 0 ? (
-                                data.data.map((item, index) => (
-                                    <div key={index} className="m-2">
-                                        <p className="text-lg">{item.title}</p>
-                                        <p className="text-sm">{item.value}</p>
-                                    </div>
-                                ))
-                            ) : (
-                                <p>Ingen data tillgänglig </p>
-                            )}
-                        </div>
-                    </div>
-                    <div className="mb-4">
-                        <h2 className="text-lg font-bold">Company Vision</h2>
-                        <p>Visions and Goals</p>
-                    </div>
-                    <div className="mb-4">
-                        <h2 className="text-lg font-bold">Key Statistics</h2>
-                        <p>Important statistics.</p>
-                    </div>
-                    <div className="mb-4">
-                        <h2 className="text-lg font-bold">Company Information</h2>
-                        <PortableText value={business?.content ?? []} />
+                        {data.data.length > 0 ? (
+                            data.data.map((item, index) => (
+                                <div key={index} className="m-2">
+                                    <p className="text-lg">{item.title}</p>
+                                    <p className="text-sm">{item.value}</p>
+                                </div>
+                            ))
+                        ) : (
+                            <p>Ingen data tillgänglig </p>
+                        )}
                     </div>
                 </div>
-
-
-                <div className="w-1/2 mt-2">
-                    <div className="space-y-4" >
-                        {business?.twitterTimelineUrl
-                            ?
-                            <TwitterTimeline twitterUrl={business?.twitterTimelineUrl || ""} />
-                            :
-                            <TwitterSpecific twitterIds={business.twitterIds || []} />}
-
-                    </div>
+                <div className="mb-4">
+                    <h2 className="text-lg font-bold">Company Vision</h2>
+                    <p>Visions and Goals</p>
                 </div>
-            </div >
+                <div className="mb-4">
+                    <h2 className="text-lg font-bold">Key Statistics</h2>
+                    <p>Important statistics.</p>
+                </div>
+                <div className="mb-4">
+                    <h2 className="text-lg font-bold">Company Information</h2>
+                    <PortableText value={business?.content ?? []} />
+                </div>
+            </div>
+
+
+            <div className="w-1/2 mt-2">
+                <div className="space-y-4" >
+                    {business?.twitterTimelineUrl
+                        ?
+                        <TwitterTimeline twitterUrl={business?.twitterTimelineUrl || ""} />
+                        :
+                        <TwitterSpecific twitterIds={business.twitterIds || []} />}
+
+                </div>
+            </div>
+        </div >
         //     <div className="max-w-4xl rounded-xl 
         //                  p-2 mx-auto mt-10">
         //         <h2 className="mb-0">Nyckeltal</h2>

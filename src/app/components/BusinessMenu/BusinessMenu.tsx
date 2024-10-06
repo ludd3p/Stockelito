@@ -16,50 +16,57 @@ const BusinessMenu = () => {
         fetchNewsPosts();
     }, []);
 
-    // Trigger transition
     const handleMouseEnter = () => {
         setStartTransition(true);
     };
 
-    return (
-        <div className="w-full" style={{ height: "85vh", marginTop: "10%" }}>
-            <div className="items-center" style={{ marginTop: "84px" }}>
-                <div className="flex justify-center items-center h-screen relative"
-                    style={{ position: 'relative' }}>
+    // Get viewport dimensions for percentage calculations
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
 
-                    {/*Div för att trigga hover*/}
-                    {!startTransition && <div
-                        className={`fire-ball absolute w-36 h-36 bg-blue-500 rounded-full transition-opacity duration-1000 ease-in-out ${startTransition ? 'opacity-0' : 'opacity-50'}`}
-                        style={{
-                            top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-                        }}
-                        onMouseEnter={handleMouseEnter}
-                    >
-                    </div>}
+    return (
+        <div className="w-full">
+            <div className="items-center">
+                <div className="flex justify-center items-center h-screen relative">
+                    {/* Div to trigger hover */}
+                    {!startTransition && (
+                        <div
+                            className={`fire-ball absolute w-36 h-36 bg-blue-500 rounded-full transition-opacity duration-1000 ease-in-out ${startTransition ? 'opacity-0' : 'opacity-50'}`}
+                            style={{
+                                top: '72.5%',
+                                left: '50.5%',
+                                transform: 'translate(-50%, -50%)',
+                            }}
+                            onMouseEnter={handleMouseEnter}
+                        ></div>
+                    )}
 
                     {businesses.map((business: Business, index: number) => {
-                        const radius = 750;
+                        const radius = 55; // Radius in percentage of the smaller dimension
                         const startAngle = 1.8 / Math.PI;
                         const endAngle = 0.8 * Math.PI;
                         const theta = startAngle + (endAngle - startAngle) * (index / (businesses.length - 1));
 
-                        const finalX = 600 + radius * Math.cos(theta);
-                        const tiltEffect = -50;
-                        const finalY = -150 + radius * Math.sin(theta) - Math.sin(index * Math.PI / (businesses.length - 1)) * tiltEffect + 25;
+                        // Calculate final positions based on percentage of viewport width and height
+                        const finalXPercent = 45 + radius * Math.cos(theta); // Centered horizontally
+                        const tiltEffect = -5; // Smaller tilt for responsiveness
+                        const finalYPercent = 23.5 + radius * Math.sin(theta) - Math.sin(index * Math.PI / (businesses.length - 1)) * tiltEffect;
 
-                        const initialX = 650;
-                        const initialY = 700;
+                        // Initial positions for animation start
+                        const initialXPercent = 50.5;  // Start near the center horizontally
+                        const initialYPercent = 85;    // Just below the fire-ball
+
 
                         return (
                             <div
                                 key={business._id}
                                 className={`absolute w-12 h-12 rounded-full transition-all ease-out`}
                                 style={{
-                                    top: `${startTransition ? finalY : initialY}px`,
-                                    left: `${startTransition ? finalX : initialX}px`,
+                                    top: `${startTransition ? finalYPercent : initialYPercent}%`,
+                                    left: `${startTransition ? finalXPercent : initialXPercent}%`,
                                     opacity: startTransition ? 1 : 0,
                                     transitionDuration: '1500ms',
-                                    transitionProperty: 'top, left, opacity'
+                                    transitionProperty: 'top, left, opacity',
                                 }}
                             >
                                 <BusinessMenuItem {...business} />

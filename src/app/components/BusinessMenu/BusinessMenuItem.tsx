@@ -5,6 +5,7 @@ import "./Business.css"
 
 const BusinessMenuItem = (business: Business) => {
   const hasLogo = business.businessLogo;
+  
 
   return (
     <Link

@@ -2,14 +2,14 @@ import { defineField } from "sanity";
 
 const news = {
   name: "news",
-  title: "News",
+  title: "Wisdoms",
   type: "document",
   fields: [
     defineField({
       name: "newsTitle",
       type: "string",
-      title: "News title",
-      description: "Title for your news post"
+      title: "Wisdom title",
+      description: "Title for your wisdom post"
     }),
     defineField({
       title: 'Is this a rumor?',
@@ -24,13 +24,8 @@ const news = {
     defineField({
       name: "newsText",
       type: "string",
-      title: "News text",
-      description: "Content of news article"
-    }),
-    defineField({
-      name: "newsImage",
-      type: "image",
-      title: "News image",
+      title: "Wisdom text",
+      description: "Content of wisdom card"
     }),
     defineField({
       name: 'slug',

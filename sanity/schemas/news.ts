@@ -40,11 +40,15 @@ const news = {
       of: [{ type: "block" }]
     }),
     defineField({
-      name: 'business',
-      type: 'reference',
-      title: 'Business',
-      to: [{ type: 'business' }]
-    })
+      name: 'upVotes',
+      title: 'Positive voters',
+      type: 'number',
+    }),
+    defineField({
+      name: 'downVotes',
+      title: 'Negative voters',
+      type: 'number',
+    }),
   ],
 };
 

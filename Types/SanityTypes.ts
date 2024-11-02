@@ -8,6 +8,8 @@ export type NewsItem = {
     newsText: string;
     slug: string;
     content: PortableTextBlock[];
+    downVotes: number;
+    upVotes: number;
 }
 
 export type Business = {

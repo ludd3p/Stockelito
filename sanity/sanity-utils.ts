@@ -11,7 +11,9 @@ export async function getNewsPosts() {
             newsText,
             isFulfilled,
             "slug": slug.current,
-            content
+            content,
+            downVotes,
+            upVotes
         }`
     )
 }
@@ -25,7 +27,9 @@ export async function getNewsPost(slug: string) {
             newsTitle,
             newsText,
             "slug": slug.current,
-            content
+            content,
+            downVotes,
+            upVotes
         }[0]`
     )
 }
@@ -40,7 +44,9 @@ export async function getRelatedNews(businessName: string) {
             newsTitle,
             newsText,
             "slug": slug.current,
-            content
+            content,
+            downVotes,
+            upVotes
         }`
     )
 }
@@ -54,9 +60,28 @@ export async function getRumorPosts() {
             newsTitle,
             newsText,
             "slug": slug.current,
-            content
+            content,
+            downVotes,
+            upVotes
         }`
     )
+}
+
+export async function updateRumorPost(postId: string, voteType: 'upVotes' | 'downVotes') {
+
+    return client
+        .patch(postId)
+        .setIfMissing({ [voteType]: 0 }) // Ensures the field exists
+        .inc({ [voteType]: voteType === 'upVotes' ? 1 : -1 }) // Increment or decrement
+        .commit()
+        .then((updatedDoc) => {
+            console.log('Updated document:', updatedDoc);
+            return updatedDoc;
+        })
+        .catch((error) => {
+            console.error('Error updating post:', error);
+            throw error;
+        });
 }
 
 export async function getBusinesses() {

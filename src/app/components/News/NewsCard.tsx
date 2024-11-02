@@ -22,7 +22,7 @@ const NewsCard = (newsItem: NewsItem) => {
       <div className="flip-card">
         <div className="flip-card-inner">
           <div className="flip-card-front">
-            <Image src="/tarot-card-dark.svg" alt="Avatar"  width="300" height="300"/>
+            <Image src="/tarot-card-dark.svg" alt="Avatar"  width={300} height={300}/>
           </div>
           <div className="flip-card-back">
             <div className="flex justify-center items-center w-full h-full">

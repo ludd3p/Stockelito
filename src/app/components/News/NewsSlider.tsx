@@ -115,8 +115,8 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
                   <Image
                     onClick={() => upVote(newsItem._id)}
                     className={`cursor-pointer transform hover:scale-110 transition duration-300 ${hasVoted(newsItem._id) ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    width="36"
-                    height="36"
+                    width={36}
+                    height={36}
                     src="/up.png"
                     alt='Icon for upvote'
                   />
@@ -126,8 +126,8 @@ const NewsSlider = ({ type = 'default' }: NewsSliderProps) => {
                   <Image
                     onClick={() => downVote(newsItem._id)}
                     className={`cursor-pointer transform hover:scale-110 transition duration-300 ${hasVoted(newsItem._id) ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    width="36"
-                    height="36"
+                    width={36}
+                    height={36}
                     src="/down.png"
                     alt='Icon for downvote'
                   />

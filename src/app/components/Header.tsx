@@ -29,7 +29,7 @@ const Header = () => {
       ${isTop ? 'bg-transparent' : 'bg-black bg-opacity-20 dark:bg-slate-500 dark:bg-opacity-30'}`}
       style={{ maxWidth: '2100px', width: '100%',margin: '0 auto' }}
     >
-      <Link href={'/'}><Image width={120} height={120} src={"/karas.png"} alt="" /></Link>
+      <Link href={'/'}><Image width={120} height={120} src={"/karas.png"} alt="smth" /></Link>
       <Link href={'/'} className="text-4xl">STOCKELITO</Link>
       <Link href={'/wisdoms'}>Wisdoms</Link>
       <Link href={'/horoscope'}>Horoskop</Link>

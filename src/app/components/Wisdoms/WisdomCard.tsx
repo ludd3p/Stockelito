@@ -48,8 +48,8 @@ export const WisdomCard = ({ wisdom }: { wisdom: NewsItem }) => {
                         }}
                     >
                         <Image
-                            width="30"
-                            height="30"
+                            width={30}
+                            height={30}
                             alt="check icon"
                             src="/check-icon.png"
                         />

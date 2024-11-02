@@ -53,7 +53,7 @@ export default function BusinessPage({ id, data }: BusinessPageProps) {
             <div className="w-1/2 p-4">
                 <div className="mb-4">
                     <div className="flex gap-4 items-center">
-                        <Image width={120} height={120} src={business?.businessLogo} alt="" />
+                        <Image width={120} height={120} src={business?.businessLogo} alt={business.businessName} />
                         <h2 className="text-xl font-bold mb-0">{`${business?.businessName} (${business?.businessTicker})`}</h2>
                     </div>
                     <p>{business?.businessText}</p>
